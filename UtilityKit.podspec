@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
     s.platform              = :ios, '9.0'
     s.framework         = 'UIKit'
     
-    s.source_files = '*.swift'
+    s.source_files = 'UtilityKit/**/*.swift'
     
     # s.resource_bundles = {
     #   'UtilityKit' => ['UtilityKit/Assets/*.png']
