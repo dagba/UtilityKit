@@ -14,7 +14,3 @@ pod 'UtilityKit'
 
 dagdk95@gmail.com
 
-## License
-
-UtilityKit is available under the MIT license. See the LICENSE file for more info.
-
