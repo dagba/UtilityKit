@@ -1,0 +1,24 @@
+{
+  "name": "UtilityKit",
+  "version": "1.0.0",
+  "summary": "My collection of useful extensions/classes/methods/variables",
+  "description": "Description:\nTODO",
+  "homepage": "https://github.com/dagba/UtilityKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Dagba": "Dagba"
+  },
+  "source": {
+    "git": "https://github.com/dagba/UtilityKit.git",
+    "tag": "1.0.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "swift_version": "4.2",
+  "frameworks": "UIKit",
+  "source_files": "UtilityKit/Classes/**/*"
+}
