@@ -12,6 +12,7 @@ final class ShadowImageView: UIView {
     @IBInspectable
     public var blurRadius: CGFloat = 3 {
         didSet {
+            if blurRadius > 10 { blurRadius = 10 }
             layoutShadow()
         }
     }
@@ -32,6 +33,7 @@ final class ShadowImageView: UIView {
     @IBInspectable
     public var imageCornerRaidus: CGFloat = 0 {
         didSet {
+            if imageCornerRaidus > 10 { imageCornerRaidus = 10 }
             imageView.layer.cornerRadius = imageCornerRaidus
             imageView.layer.masksToBounds = true
         }
