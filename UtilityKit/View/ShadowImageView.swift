@@ -2,7 +2,7 @@ import UIKit
 import CoreGraphics
 
 @IBDesignable
-class ShadowImageView: UIView {
+final class ShadowImageView: UIView {
     
     private var imageView = UIImageView()
     private var blurredImageView = UIImageView()
