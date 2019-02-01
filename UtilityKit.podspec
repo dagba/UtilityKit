@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'UtilityKit'
-    s.version          = '1.0.1'
+    s.version          = '1.0.2'
     s.summary          = 'My collection of useful extensions/classes/methods/variables'
     
     # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     s.homepage         = 'https://github.com/dagba/UtilityKit'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'Dagba' => 'Dagba' }
-    s.source           = { :git => 'https://github.com/dagba/UtilityKit.git', :commit => "6f7b5b5c77e9896ff0260e9184109da48abf4561", :tag => s.version.to_s }
+    s.source           = { :git => 'https://github.com/dagba/UtilityKit.git', :commit => "a30bf924c85cff034758aa8bb4a1c0932c008f88", :tag => s.version.to_s }
     
     
     s.ios.deployment_target = '10.0'
