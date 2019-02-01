@@ -1,7 +1,7 @@
 import UIKit
 
-extension CGRect {
-    public var minSideSize: CGFloat {
+private extension CGRect {
+    var minSideSize: CGFloat {
         return min(self.width, self.height)
     }
 }
@@ -16,7 +16,7 @@ extension UIView {
         let heightRelativeFactor: CGFloat = 0.78
         let blurRadiusFactor: CGFloat = 0.1
         let shadowOpacity: CGFloat = 0.3
-        
+
         if self.frame.width < 120 {
             widthRelativeFactor = widthRelativeFactor * 0.8
         }
@@ -131,7 +131,7 @@ extension UIView {
         self.layer.cornerRadius = self.frame.minSideSize / 2
     }
     
-    public func setBlurShadow(color: UIColor, style: UIView.BlurStyle) {
+    public func setBlurShadow(color: UIColor, style: UIView.BlurShadowStyle) {
         layer.shadowColor = color.cgColor
         layer.shadowOffset = CGSize.zero
         layer.shadowOpacity = style.rawValue
@@ -140,9 +140,9 @@ extension UIView {
     
 }
 
-extension UIView {
+public extension UIView {
     
-    public enum BlurStyle: Float {
+    public enum BlurShadowStyle: Float {
         case light = 0.2
         case medium = 0.4
         case bold = 0.8
