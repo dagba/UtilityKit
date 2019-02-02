@@ -8,6 +8,10 @@ private extension CGRect {
 
 extension UIView {
     
+    public func addSubviews(_ subviews: UIView...) {
+        subviews.forEach(addSubview)
+    }
+    
     public func setDeepShadow() {
         
         let xTranslationFactor: CGFloat = 0
