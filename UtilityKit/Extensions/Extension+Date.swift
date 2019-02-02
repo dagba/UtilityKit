@@ -11,10 +11,23 @@ extension Date {
         
         if !calendar.isDateInToday(date) {
             var stringDate = formatter.string(from: date)
-            let currentYear = String(Calendar.current.component(.year, from: Date()))
+            let currentYear = String(calendar.component(.year, from: Date()))
             
             if stringDate.contains(currentYear) {
                 let day = calendar.component(.day, from: date)
+                let week = calendar.component(.weekOfYear, from: date)
+                let currentWeek = calendar.component(.weekOfYear, from: Date())
+                
+                if week == currentWeek {
+                    if calendar.isDateInYesterday(date) {
+                        formatter.doesRelativeDateFormatting = true
+                        return formatter.string(from: date)
+                    } else {
+                        formatter.dateFormat = "EEEE"
+                        return formatter.string(from: date)
+                    }
+                }
+                
                 formatter.dateFormat = "MMM"
                 let month = formatter.string(from: date)
                 stringDate = "\(day) \(month)".replacingOccurrences(of: ".", with: "")
@@ -42,9 +55,12 @@ extension Date {
     
     public var month: String {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: Locale.current.languageCode ?? "ru_RU")
+        formatter.locale = Locale(identifier: "ru_RU")
         formatter.dateFormat = "LLLL"
-        return formatter.string(from: self)
+        
+        let month = formatter.string(from: self)
+        
+        return month.prefix(1).uppercased() + month.dropFirst()
     }
     
     public var year: Int {

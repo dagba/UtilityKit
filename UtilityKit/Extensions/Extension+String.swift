@@ -7,4 +7,13 @@ extension String {
         let cleanText = trimmingCharacters(in: .whitespacesAndNewlines)
         return cleanText.isEmpty ? nil : cleanText
     }
+    
+    // Return string with uppercased first character
+    public func capitalizedFirst() -> String {
+        return prefix(1).uppercased() + self.lowercased().dropFirst()
+    }
+    
+    mutating public func capitalizeFirst() {
+        self = self.capitalizingFirstLetter()
+    }
 }
