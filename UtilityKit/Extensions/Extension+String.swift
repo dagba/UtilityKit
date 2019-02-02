@@ -14,6 +14,6 @@ extension String {
     }
     
     mutating public func capitalizeFirst() {
-        self = self.capitalizingFirstLetter()
+        self = self.capitalizedFirst()
     }
 }
