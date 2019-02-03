@@ -18,14 +18,12 @@ extension Date {
                 let week = calendar.component(.weekOfYear, from: date)
                 let currentWeek = calendar.component(.weekOfYear, from: Date())
                 
-                if week == currentWeek {
-                    if calendar.isDateInYesterday(date) {
-                        formatter.doesRelativeDateFormatting = true
-                        return formatter.string(from: date)
-                    } else {
-                        formatter.dateFormat = "EEEE"
-                        return formatter.string(from: date)
-                    }
+                if calendar.isDateInYesterday(date) {
+                    formatter.doesRelativeDateFormatting = true
+                    return formatter.string(from: date)
+                } else if week == currentWeek {
+                    formatter.dateFormat = "EEEE"
+                    return formatter.string(from: date)
                 }
                 
                 formatter.dateFormat = "MMM"
